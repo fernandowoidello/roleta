@@ -1,0 +1,29 @@
+/* slot-machine.component.css */
+
+.slot-machine-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.slot-machine {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 200px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.slot-number {
+  position: absolute;
+  transform-origin: 50% 50%;
+  transform: rotate(0deg);
+  transition: transform 3s ease-out;
+}
