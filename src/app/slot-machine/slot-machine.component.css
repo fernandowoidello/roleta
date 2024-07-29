@@ -27,3 +27,13 @@
   transform: rotate(0deg);
   transition: transform 3s ease-out;
 }
+
+.button-spacing {
+  margin: 10px 0; /* Adiciona 10px de margem acima e abaixo dos botões */
+}
+
+.custom-button {
+  background-color: #22ff2d; /* Cor de fundo personalizada */
+  color: green; /* Cor do texto */
+  border-radius: 4px; /* Radius da borda */
+}

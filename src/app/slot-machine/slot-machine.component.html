@@ -2,7 +2,19 @@
   <div class="slot-machine">
     <div class="slot-number">{{ randomNumber }}</div>
   </div>
-  <button mat-raised-button color="primary" (click)="spin()">
-    Spin
-  </button>
+  <button mat-raised-button color="primary" (click)="spin()" class="button-spacing">Girar</button>
+  
+  <button mat-raised-button color="accent" (click)="playAudio1()" class="button-spacing">ERRROU !</button>
+  <button mat-raised-button color="accent" (click)="playAudio2()" class="button-spacing">Que pena, voce errou.</button>
+  <button mat-raised-button color="accent" (click)="playAudio3()" class="button-spacing">Ta pegando fogo bicho !</button>
+  <button mat-raised-button color="warn" (click)="playAudio4()" class="button-spacing">Certa resposta !</button>
+  
+  <p>Número: {{ randomNumber }}</p>
+  
+  <audio #audioPlayer0 src="https://www.myinstants.com/media/sounds/piao-do-bau.mp3"></audio>/
+  <audio #audioPlayer1 src="https://www.myinstants.com/media/sounds/faustao-errou.mp3"></audio>
+  <audio #audioPlayer2 src="https://www.myinstants.com/media/sounds/errou-show-do-milhao.mp3"></audio>
+  <audio #audioPlayer3 src="https://www.myinstants.com/media/sounds/pegando-fogo-bicho.mp3"></audio>
+  <audio #audioPlayer4 src="https://www.myinstants.com/media/sounds/silvio-santos-certa-resposta.mp3"></audio>
+
 </div>
