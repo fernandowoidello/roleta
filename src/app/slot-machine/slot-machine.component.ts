@@ -31,24 +31,36 @@ export class SlotMachineComponent implements OnInit {
   });
 }
 
-  spin() {
-    
-    if (!this.isSpinning) {
-      this.isSpinning = true;
-      this.audioPlayer0.nativeElement.play(); // Inicia a reprodução do áudio
+spin() {
+  if (!this.isSpinning) {
+    this.isSpinning = true;
 
-   this.spinInterval = setInterval(() => {
-        this.randomNumber = Math.floor(Math.random() * 500) + 1; // Gera número aleatório entre 1 e 500
-      }, 100); // Intervalo de atualização do número
+    // Cria um novo objeto Audio
+    let audio = new Audio();
+    audio.src = 'https://www.myinstants.com/media/sounds/piao-do-bau.mp3';
+    audio.volume = 0.5; // Ajuste o volume conforme necessário
+    audio.load();
+    audio.play();
 
-      setTimeout(() => {
-        this.audioPlayer0.nativeElement.pause(); // Para o áudio
-        this.audioPlayer0.nativeElement.currentTime = 0; // Reposiciona o áudio no início
-        clearInterval(this.spinInterval);
-        this.isSpinning = false;
-      }, 10000); // Tempo de rotação em milissegundos (3 segundos)
-    }
+    this.spinInterval = setInterval(() => {
+      this.randomNumber = Math.floor(Math.random() * 500) + 1; // Gera número aleatório entre 1 e 500
+    }, 100); // Intervalo de atualização do número
+
+    // Define o comportamento quando o áudio terminar
+    audio.addEventListener('ended', () => {
+      clearInterval(this.spinInterval);
+      this.isSpinning = false;
+    });
+
+    setTimeout(() => {
+      audio.pause(); // Para o áudio
+      audio.currentTime = 0; // Reposiciona o áudio no início
+      clearInterval(this.spinInterval);
+      this.isSpinning = false;
+    }, 10000); // Tempo de rotação em milissegundos (10 segundos)
   }
+}
+  
 
   playAudio1() {
     this.audioPlayer1.nativeElement.play();
@@ -59,7 +71,11 @@ export class SlotMachineComponent implements OnInit {
 }
 
 playAudio3() {
-  this.audioPlayer3.nativeElement.play();
+let audio = new Audio();
+audio.src = 'https://www.myinstants.com/media/sounds/pegando-fogo-bicho.mp3';
+audio.volume = 0.5;
+audio.load();
+audio.play();
 }
 
 playAudio4() {
