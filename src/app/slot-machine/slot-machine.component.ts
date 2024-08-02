@@ -37,7 +37,7 @@ spin() {
 
     // Cria um novo objeto Audio
     let audio = new Audio();
-    audio.src = 'https://www.myinstants.com/media/sounds/piao-do-bau.mp3';
+    audio.src = 'https://www.myinstants.com/media/sounds/perguntashowdomilhao.mp3';
     audio.volume = 0.5; // Ajuste o volume conforme necessário
     audio.load();
     audio.play();
@@ -57,7 +57,7 @@ spin() {
       audio.currentTime = 0; // Reposiciona o áudio no início
       clearInterval(this.spinInterval);
       this.isSpinning = false;
-    }, 10000); // Tempo de rotação em milissegundos (10 segundos)
+    }, 2000); // Tempo de rotação em milissegundos
   }
 }
   
