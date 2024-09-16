@@ -6,6 +6,8 @@ import { MatButtonModule } from '@angular/material/button'; // Importando o mód
 
 import { AppComponent } from './app.component';
 import { SlotMachineComponent } from './slot-machine/slot-machine.component'; // Ajuste o caminho conforme necessário
+import { HttpClientModule } from '@angular/common/http'; // httclient api
+
 
 @NgModule({
   declarations: [
@@ -16,7 +18,8 @@ import { SlotMachineComponent } from './slot-machine/slot-machine.component'; //
     BrowserModule,
     BrowserAnimationsModule,
     MatButtonModule, // Adicionando MatButtonModule aos imports
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

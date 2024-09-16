@@ -19,6 +19,7 @@
   margin-bottom: 10px;
   font-size: 2rem;
   font-weight: bold;
+  position: relative;
 }
 
 .slot-number {
@@ -31,6 +32,17 @@
 .button-spacing {
   margin: 10px 0; /* Adiciona 10px de margem acima e abaixo dos botões */
 }
+
+.correct-answer {
+  background-color: green;
+  color: white;
+}
+
+.wrong-answer {
+  background-color: red;
+  color: white;
+}
+
 
 .custom-button {
   background-color: #22ff2d; /* Cor de fundo personalizada */
