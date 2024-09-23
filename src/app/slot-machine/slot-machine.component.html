@@ -13,20 +13,25 @@
 
   <p>Número: {{ randomNumber }}</p>
 
-  <!-- Exibir a pergunta sorteada -->
-  <div *ngIf="selectedQuestion">
-    <h2>{{ selectedQuestion.questionText }}</h2> <!-- Ajuste conforme o nome da propriedade do JSON -->
+ 
 
+   <!-- Exibir a pergunta sorteada -->
+  <div *ngIf="selectedQuestion">
+    <h2>{{ selectedQuestion.questionText }}</h2>
+    
     <!-- Exibir as opções de resposta -->
-    <div *ngFor="let option of selectedQuestion.answers"> <!-- Use 'answers' aqui -->
-      <button mat-raised-button 
-              [ngClass]="{
-                'correct-answer': option.isCorrect && selectedOption === option, 
-                'wrong-answer': !option.isCorrect && selectedOption === option
-              }"
-              (click)="selectOption(option)">
+    <div *ngFor="let option of selectedQuestion.answers">
+      <button mat-raised-button (click)="selectOption(option)"
+              [ngClass]="{'correct': correctAnswer === true && option.isCorrect,
+                          'incorrect': correctAnswer === false && !option.isCorrect}">
         {{ option.text }}
       </button>
+    </div>
+    
+    <!-- Mensagem de feedback após selecionar a resposta -->
+    <div *ngIf="correctAnswer !== null">
+      <p *ngIf="correctAnswer" class="correct-answer">Resposta correta!</p>
+      <p *ngIf="!correctAnswer" class="incorrect-answer">Resposta errada! A correta é: {{ selectedQuestion.correctAnswer }}</p>
     </div>
   </div>
 </div>

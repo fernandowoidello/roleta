@@ -1,0 +1,29 @@
+<h2 mat-dialog-title class="question-title">{{ data.questionText }}</h2>
+<mat-dialog-content class="dialog-content">
+  <div class="options-container">
+    <div *ngFor="let option of data.answers; let i = index" class="option">
+      <button mat-raised-button 
+              [ngClass]="{'correct-option': selectedOption?.text ===  option.text, 
+                        'incorrect-option': selectedOption !== null && selectedOption?.text !== option.text}"
+              class="option-button" 
+              (click)="selectOption(option)">
+        <span class="option-letter">{{ getOptionLetter(i) }}.</span> {{ option.text }}
+      </button>
+    </div>
+  </div>
+
+<!-- Exibe a mensagem se a resposta estiver errada -->
+<p *ngIf="correctAnswer === false" class="incorrect-answer">
+  Resposta errada! A correta é: {{ correctOption?.text }}
+</p>
+  
+
+  <!-- Mensagem de resposta correta -->
+  <p *ngIf="correctAnswer === true" class="correct-answer">
+    Parabéns! Você acertou.
+  </p>
+</mat-dialog-content>
+
+<mat-dialog-actions class="dialog-actions">
+  <button mat-button class="close-button" (click)="onClose()">Fechar</button>
+</mat-dialog-actions>

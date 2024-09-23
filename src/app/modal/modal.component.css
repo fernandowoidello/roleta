@@ -1,0 +1,152 @@
+/* modal.component.css */
+
+.modal-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #3f51b5; /* Cor do título */
+    text-align: center;
+  }
+  
+  .modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinha o texto à esquerda */
+    padding: 20px;
+  }
+  
+  .option-container {
+    margin: 10px 0; /* Espaço entre os botões */
+    display: flex;
+    align-items: center;
+  }
+  
+  .option-button {
+    width: 100%;
+    margin: 5px 0;
+    text-transform: uppercase;
+    font-size: 1rem;
+    border-radius: 4px;
+    background-color: #2196f3; /* Cor do botão */
+    color: white;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+  }
+  
+  .option-button:hover {
+    background-color: #1976d2; /* Cor do botão ao passar o mouse */
+  }
+  
+  .modal-actions {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+  }
+  
+  .close-button {
+    background-color: #f44336; /* Cor do botão de fechar */
+    color: white;
+    font-weight: bold;
+  }
+  
+  .close-button:hover {
+    background-color: #d32f2f; /* Cor do botão de fechar ao passar o mouse */
+  }
+  
+  /* Estilo para a modal */
+  .mat-dialog-container {
+    border-radius: 12px; /* Arredondar os cantos da modal */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra da modal */
+  }
+  
+  /* Opcional: adicionar um fundo claro à modal para destacar o conteúdo */
+  .mat-dialog-content {
+    background-color: #fff;
+  }
+  
+  /* modal.component.css */
+
+/* Organizando as respostas em 2 colunas */
+.answers-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 colunas de tamanhos iguais */
+  gap: 16px; /* Espaçamento entre os botões */
+}
+
+.option-button {
+  padding: 10px;
+  text-align: center;
+  background-color: #2196f3; /* Cor do botão */
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+.option-button:hover {
+  background-color: #1976d2; /* Cor do botão ao passar o mouse */
+}
+
+.mat-dialog-container {
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 80%; /* Aumenta a largura da modal em relação à tela */
+  max-width: 800px; /* Define um limite máximo de largura */
+}
+
+.mat-dialog-container {
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .options-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  
+  button {
+    width: 100%;
+  }
+
+  .option-button {
+    margin: 5px 0;
+  }
+  
+  .correct-option {
+    background-color: #4caf50 !important; /* Verde para resposta correta */
+    color: white;
+  }
+  
+  .incorrect-option {
+    background-color: #f44336 !important; /* Vermelho para resposta incorreta */
+    color: white;
+  }
+  
+  .incorrect-answer {
+    color: #f44336;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  
+  .correct-answer {
+    color: #4caf50;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  .correct-option {
+  background-color: green;
+  color: white;
+}
+
+.incorrect-option {
+  background-color: red;
+  color: white;
+}
+
+.option-button {
+  margin: 5px;
+}
+
+
+  
+  

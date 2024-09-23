@@ -3,6 +3,10 @@ import { QuestionServiceService } from '../services/question-service.service';
 import { QuestionDto } from '../services/question.dto'; // Ajuste o caminho conforme necessário
 import { OptionDto } from '../services/option.dto';
 
+import { MatDialog } from '@angular/material/dialog';
+import { ModalComponent } from '../modal/modal.component';
+
+
 
 
 @Component({
@@ -25,7 +29,7 @@ export class SlotMachineComponent implements OnInit {
   @ViewChild('audioPlayer3', { static: true }) audioPlayer3!: ElementRef<HTMLAudioElement>;
   @ViewChild('audioPlayer4', { static: true }) audioPlayer4!: ElementRef<HTMLAudioElement>;
 
-  constructor(private questionServiceService: QuestionServiceService) { }
+  constructor(private questionServiceService: QuestionServiceService, private dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.loadQuestions();
@@ -42,7 +46,15 @@ export class SlotMachineComponent implements OnInit {
       console.log('Perguntas carregadas:', this.questions);
     });
   }
-
+//adicionado para embaralhar as perguntas
+  shuffleOptions(options: OptionDto[]): OptionDto[] {
+    // Algoritmo de Fisher-Yates para embaralhar o array
+    for (let i = options.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [options[i], options[j]] = [options[j], options[i]];
+    }
+    return options;
+  }
 
   spin() {
     
@@ -78,9 +90,34 @@ export class SlotMachineComponent implements OnInit {
         this.isSpinning = false;
         this.selectedQuestion = this.questions[this.randomNumber]; // Seleciona a pergunta baseada no número sorteado
         this.correctAnswer = null; // Reinicia a verificação de resposta
+        this.openQuestionModal();
+
       }, 2000);
     }
   }
+
+  openQuestionModal() {
+    if (this.selectedQuestion) {
+      const dialogRef = this.dialog.open(ModalComponent, {
+        width: '600px', // Ajuste a largura conforme necessário
+        data: this.selectedQuestion 
+      });
+
+      dialogRef.afterClosed().subscribe(selectedOption => {
+        if (selectedOption) {
+          this.selectOption(selectedOption);
+        }
+      });
+    }
+  }
+
+
+  openDialog(): void {
+  const dialogRef = this.dialog.open(ModalComponent, {
+    width: '800px', // Aumente o valor conforme necessário
+    data: { /* seus dados */ }
+  });
+}
 
   selectOption(option: any) {
     this.selectedOption = option;

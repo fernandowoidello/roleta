@@ -49,3 +49,32 @@
   color: green; /* Cor do texto */
   border-radius: 4px; /* Radius da borda */
 }
+
+/* modal.component.css */
+
+/* Organizando as respostas em 2 colunas */
+.answers-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 colunas de tamanhos iguais */
+  gap: 16px; /* Espaçamento entre os botões */
+}
+
+.option-button {
+  padding: 10px;
+  text-align: center;
+  background-color: #2196f3; /* Cor do botão */
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+.option-button:hover {
+  background-color: #1976d2; /* Cor do botão ao passar o mouse */
+}
+
+.mat-dialog-container {
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 80%; /* Aumenta a largura da modal em relação à tela */
+  max-width: 800px; /* Define um limite máximo de largura */
+}
