@@ -78,3 +78,25 @@
   width: 80%; /* Aumenta a largura da modal em relação à tela */
   max-width: 800px; /* Define um limite máximo de largura */
 }
+
+.openQuestionModal {
+  max-width: 90%;  /* Limita a largura máxima da modal a 90% da tela */
+  width: 100%;     /* Ocupará até 100% do container pai */
+  border-radius: 12px; /* Bordas suaves com 12px de raio */
+  padding: 16px;  /* Adiciona espaçamento interno para o conteúdo */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona sombra para destacar a modal */
+}
+
+/* Estilos para telas maiores */
+@media (min-width: 768px) {
+  .openQuestionModal {
+    width: 600px; /* Define uma largura fixa em telas maiores */
+  }
+}
+
+/* Estilos para telas muito grandes */
+@media (min-width: 1024px) {
+  .openQuestionModal {
+    width: 800px; /* Aumenta a largura em telas maiores */
+  }
+}

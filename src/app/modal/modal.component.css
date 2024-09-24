@@ -133,7 +133,7 @@
     font-weight: bold;
     margin-top: 20px;
   }
-  .correct-option {
+  /* .correct-option {
   background-color: green;
   color: white;
 }
@@ -141,12 +141,15 @@
 .incorrect-option {
   background-color: red;
   color: white;
-}
+} */
 
 .option-button {
   margin: 5px;
 }
-
-
+/* Quando a opção é clicada (selecionada) - mantém o azul */
+.selected-option {
+  background-color: blue;
+  color: white;
+}
   
   

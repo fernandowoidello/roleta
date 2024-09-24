@@ -26,9 +26,16 @@ export class ModalComponent {
   selectOption(option: OptionDto) {
     this.selectedOption = option; // Armazena a opção selecionada
     this.correctAnswer = option.text === this.data.correctAnswer; // Verifica se está correta
-  
     // Encontra a opção correta
     this.correctOption = this.data.answers.find(answer => answer.text === this.data.correctAnswer) || null;
+ // Toca o som apropriado
+      if (this.correctAnswer) {
+        this.playCorrectAudio();
+      } 
+      else {
+  this.playIncorrectAudio();
+}
+
   }
 
   onClose(): void {
@@ -45,6 +52,24 @@ export class ModalComponent {
   //   return option.text === this.data.correctAnswer;
 
   // }
+
+   // Funções de áudio 
+  playCorrectAudio() {
+    let audio = new Audio();
+    audio.src = 'https://www.myinstants.com/media/sounds/silvio-santos-certa-resposta.mp3'; // Som de resposta correta
+    audio.volume = 1.0;
+    audio.load();
+    audio.play();
+  }
+
+  playIncorrectAudio() {
+    let audio = new Audio();
+    audio.src = 'https://www.myinstants.com/media/sounds/faustao-errou.mp3'; // Som de resposta errada
+    audio.volume = 1.0;
+    audio.load();
+    audio.play();
+  }
 }
+
 
 

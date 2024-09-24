@@ -3,12 +3,15 @@
   <div class="options-container">
     <div *ngFor="let option of data.answers; let i = index" class="option">
       <button mat-raised-button 
-              [ngClass]="{'correct-option': selectedOption?.text ===  option.text, 
-                        'incorrect-option': selectedOption !== null && selectedOption?.text !== option.text}"
-              class="option-button" 
-              (click)="selectOption(option)">
-        <span class="option-letter">{{ getOptionLetter(i) }}.</span> {{ option.text }}
-      </button>
+      [ngClass]="{
+        'correct-option': option.text === data.correctAnswer && selectedOption, 
+        'incorrect-option': option === selectedOption && option.text !== data.correctAnswer,
+        'default-option': selectedOption !== option && option.text !== data.correctAnswer
+      }"
+      class="option-button" 
+      (click)="selectOption(option)">
+<span class="option-letter">{{ getOptionLetter(i) }}.</span> {{ option.text }}
+</button>
     </div>
   </div>
 
@@ -19,7 +22,7 @@
   
 
   <!-- Mensagem de resposta correta -->
-  <p *ngIf="correctAnswer === true" class="correct-answer">
+  <p *ngIf="correctAnswer === true" class="correct-answer" >
     Parabéns! Você acertou.
   </p>
 </mat-dialog-content>

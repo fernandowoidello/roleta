@@ -99,7 +99,6 @@ export class SlotMachineComponent implements OnInit {
   openQuestionModal() {
     if (this.selectedQuestion) {
       const dialogRef = this.dialog.open(ModalComponent, {
-        width: '600px', // Ajuste a largura conforme necessário
         data: this.selectedQuestion 
       });
 

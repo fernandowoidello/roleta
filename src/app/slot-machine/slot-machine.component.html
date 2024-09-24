@@ -4,34 +4,33 @@
   </div>
 
   <button mat-raised-button color="primary" (click)="spin()" class="button-spacing">Girar</button>
-  
-  <!-- Botões de áudio -->
-  <button mat-raised-button color="accent" (click)="playAudio1()" class="button-spacing">ERRROU !</button>
-  <button mat-raised-button color="accent" (click)="playAudio2()" class="button-spacing">Que pena, você errou.</button>
   <button mat-raised-button color="accent" (click)="playAudio3()" class="button-spacing">Tá pegando fogo, bicho!</button>
-  <button mat-raised-button color="warn" (click)="playAudio4()" class="button-spacing">Certa resposta!</button>
 
   <p>Número: {{ randomNumber }}</p>
 
- 
+  
+  <!-- Botões de áudio -->
+  <!-- <button mat-raised-button color="accent" (click)="playAudio1()" class="button-spacing">ERRROU !</button>
+  <button mat-raised-button color="accent" (click)="playAudio2()" class="button-spacing">Que pena, você errou.</button> -->
+  <!-- <button mat-raised-button color="warn" (click)="playAudio4()" class="button-spacing">Certa resposta!</button> -->
 
    <!-- Exibir a pergunta sorteada -->
-  <div *ngIf="selectedQuestion">
+  <!-- <div *ngIf="selectedQuestion">
     <h2>{{ selectedQuestion.questionText }}</h2>
-    
+     -->
     <!-- Exibir as opções de resposta -->
-    <div *ngFor="let option of selectedQuestion.answers">
-      <button mat-raised-button (click)="selectOption(option)"
+    <!-- <div *ngFor="let option of selectedQuestion.answers"> -->
+      <!-- <button mat-raised-button (click)="selectOption(option)"
               [ngClass]="{'correct': correctAnswer === true && option.isCorrect,
                           'incorrect': correctAnswer === false && !option.isCorrect}">
         {{ option.text }}
-      </button>
-    </div>
+      </button> -->
+    <!-- </div> -->
     
     <!-- Mensagem de feedback após selecionar a resposta -->
-    <div *ngIf="correctAnswer !== null">
+    <!-- <div *ngIf="correctAnswer !== null">
       <p *ngIf="correctAnswer" class="correct-answer">Resposta correta!</p>
       <p *ngIf="!correctAnswer" class="incorrect-answer">Resposta errada! A correta é: {{ selectedQuestion.correctAnswer }}</p>
-    </div>
-  </div>
-</div>
+    </div> -->
+  <!-- </div>
+</div> -->
